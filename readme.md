@@ -5,7 +5,7 @@ This repository contains code for gathering data and producing a forecast for th
 
 ## Expected Minutes
 
-This project collects and processes NBA team and player data from [Basketball-Reference](https://www.basketball-reference.com) to estimate expected playoff minutes for each team’s 10-man rotation. For each team in the 2024--25 season, the code scrapes roster information, advanced player statistics, and injury reports. Only players who have played more than 250 total minutes are considered for inclusion. To account for availability, players listed as ``Out For Season'' are removed. The top 10 players per team are selected based on their average minutes per game, calculated as total minutes played divided by games played:
+This project collects and processes NBA team and player data from [Basketball-Reference](https://www.basketball-reference.com) to estimate expected playoff minutes for each team’s 10-man rotation. For each team in the 2024--25 season, the code scrapes roster information, advanced player statistics, and injury reports. Only players who have played more than 250 total minutes are considered for inclusion. To account for availability, players listed as "Out For Season" are removed. The top 10 players per team are selected based on their average minutes per game, calculated as total minutes played divided by games played:
 
 $$
 \text{MPG}_i = \frac{\text{MP}_i}{\text{G}_i}
@@ -17,7 +17,7 @@ $$
 w_i = \frac{1}{1 + \exp\left(-\alpha \cdot (\text{MPG}_i - \text{MedianMPG})\right)}
 $$
 
-where \( \alpha \) controls the steepness and \( \text{MedianMPG} \) is the median minutes per game among the top 10 players. These transformed values are then scaled so that their sum equals 240 minutes---the total minutes available per team per game:
+where $\alpha$ controls the steepness and $\text{MedianMPG}$ is the median minutes per game among the top 10 players. These transformed values are then scaled so that their sum equals 240 minutes---the total minutes available per team per game:
 
 $$
 \text{Minutes}_i = w_i \cdot \frac{240}{\sum w_i}
@@ -33,7 +33,7 @@ $$
 z_{ij} = \frac{x_{ij} - \bar{x}_j}{\sigma_j}
 $$
 
-where \( x_{ij} \) is player \( i \)'s value for statistic \( j \), \( \bar{x}_j \) is the league-wide mean of statistic \( j \), and \( \sigma_j \) is its standard deviation.
+where $x_{ij}$ is player $i$'s value for statistic $j$, $\bar{x}_j$ is the league-wide mean of statistic $j$, and $\sigma_j$ is its standard deviation.
 
 ### Team Ratings Based on Projected Playoff Productivity
 
