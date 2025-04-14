@@ -420,14 +420,16 @@ weighted by the player’s projected playoff minutes (described in the
 previous section). For each team, I calculate a minutes-weighted average
 productivity:</p>
 <p><span class="math display">\[
-\text{TeamScore}_k = \frac{\sum_{i \in k} \text{Productivity}_i \cdot
-\text{Minutes}_i}{\sum_{i \in k} \text{Minutes}_i}
+\text{TeamScore}_k = \frac{\sum_{k} \text{Productivity}_i \cdot
+\text{Minutes}_i}{\sum_{k} \text{Minutes}_i}
 \]</span></p>
-<p>Finally, these team scores are themselves standardized across the
-league to produce a relative team rating:</p>
+<p>for all players on team <span class="math inline">\(k\)</span>.
+(Github doesn’t like subset notation.) Finally, these team scores are
+themselves standardized across the league to produce a relative team
+rating:</p>
 <p><span class="math display">\[
 \text{Rating}_k = \frac{\text{TeamScore}_k -
-\overline{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
+\bar{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
 \]</span></p>
 <p>This rating captures how productive each team’s playoff rotation is
 expected to be, relative to the league average, based on a composite of
