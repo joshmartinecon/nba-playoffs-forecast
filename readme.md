@@ -51,37 +51,23 @@ $$
 
 This rating captures how productive each team's playoff rotation is expected to be, relative to the league average, based on a composite of advanced player statistics and projected playing time.
 
-### Results
+### Estimated Team Ratings by Conference
 
-| Team | Rating |
-|:----:|:------:|
-| OKC  |  2.05  |
-| CLE  |  1.54  |
-| DEN  |  1.24  |
-| BOS  |  1.22  |
-| NYK  |  0.87  |
-| LAC  |  0.83  |
-| GSW  |  0.75  |
-| MIN  |  0.62  |
-| LAL  |  0.61  |
-| MEM  |  0.61  |
-| MIL  |  0.55  |
-| HOU  |  0.38  |
-| IND  |  0.29  |
-| SAC  |  0.15  |
-| DET  |  0.08  |
-| CHI  | -0.04  |
-| ORL  | -0.05  |
-| ATL  | -0.19  |
-| MIA  | -0.19  |
-| TOR  | -0.19  |
-| DAL  | -0.36  |
-| PHO  | -0.51  |
-| POR  | -0.52  |
-| SAS  | -0.78  |
-| UTA  | -0.84  |
-| BRK  | -1.26  |
-| PHI  | -1.33  |
-| CHO  | -1.66  |
-| NOP  | -1.80  |
-| WAS  | -2.07  |
+| Western Conf. | Rating | Eastern Conf. | Rating |
+|:-------------:|:------:|:-------------:|:------:|
+| OKC           |  2.05  | CLE           |  1.54  |
+| DEN           |  1.24  | BOS           |  1.22  |
+| LAC           |  0.83  | NYK           |  0.87  |
+| GSW           |  0.75  | MIL           |  0.55  |
+| MIN           |  0.62  | HOU           |  0.38  |
+| LAL           |  0.61  | IND           |  0.29  |
+| MEM           |  0.61  | DET           |  0.08  |
+| SAC           |  0.15  | CHI           | -0.04  |
+| DAL           | -0.36  | ORL           | -0.05  |
+| PHO           | -0.51  | ATL           | -0.19  |
+| POR           | -0.52  | MIA           | -0.19  |
+| SAS           | -0.78  | TOR           | -0.19  |
+| UTA           | -0.84  | BRK           | -1.26  |
+| NOP           | -1.80  | PHI           | -1.33  |
+|               |        | CHO           | -1.66  |
+|               |        | WAS           | -2.07  |
