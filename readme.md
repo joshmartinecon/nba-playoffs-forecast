@@ -46,7 +46,7 @@ $$
 for all players $i$ on team $k$ (github hates subset notation). Finally, these team scores are themselves standardized across the league to produce a relative team rating:
 
 $$
-\text{Rating}_k = \frac{\text{TeamScore}_k - \bar{\text{TeamScore}}}{\sigma_{TeamScore}}
+\text{Rating}_k = \frac{\text{TeamScore}_k - \operatorname{E}\left[\text{TeamScore}\right]}{\sigma_{\text{TeamScore}}}
 $$
 
 This rating captures how productive each team's playoff rotation is expected to be, relative to the league average, based on a composite of advanced player statistics and projected playing time.
