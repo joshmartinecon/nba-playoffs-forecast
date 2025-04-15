@@ -40,13 +40,13 @@ where $x_{ij}$ is player $i$'s value for statistic $j$, $\bar{x}_j$ is the leagu
 Next, I compute an average productivity score for each player by taking the mean of the three standardized metrics. This average is then weighted by the player’s projected playoff minutes (described in the previous section). For each team, I calculate a minutes-weighted average productivity:
 
 $$
-S_k = \text{TeamScore}_k = \frac{\sum \text{Productivity}_i \cdot \text{Minutes}_i}{\sum \text{Minutes}_i}
+s_k = \text{TeamScore}_k = \frac{\sum \text{Productivity}_i \cdot \text{Minutes}_i}{\sum \text{Minutes}_i}
 $$
 
 for all players $i$ on team $k$ (github hates subset notation). Finally, these team scores are themselves standardized across the league to produce a relative team rating:
 
 $$
-\text{Rating}_k = \frac{S_k - \bar{S}}{\sigma_{S}}
+\text{Rating}_k = \frac{s_k - \bar{s}}{\sigma_s}
 $$
 
 This rating captures how productive each team's playoff rotation is expected to be, relative to the league average, based on a composite of advanced player statistics and projected playing time.
