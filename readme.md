@@ -40,18 +40,18 @@ where $x_{ij}$ is player $i$'s value for statistic $j$, $\bar{x}_j$ is the leagu
 Next, I compute an average productivity score for each player by taking the mean of the three standardized metrics. This average is then weighted by the player’s projected playoff minutes (described in the previous section). For each team, I calculate a minutes-weighted average productivity:
 
 $$
-\text{TeamScore}_k = \frac{\sum_{k} \text{Productivity}_i \cdot \text{Minutes}_i}{\sum_{k} \text{Minutes}_i}
+\text{TeamScore}_k = \frac{\sum \text{Productivity}_i \cdot \text{Minutes}_i}{\sum \text{Minutes}_i}
 $$
 
-for all players on team $k$. (Github doesn't like subset notation.) Finally, these team scores are themselves standardized across the league to produce a relative team rating:
+for all players $i$ on team $k$. Finally, these team scores are themselves standardized across the league to produce a relative team rating:
 
 $$
-\text{Rating}_k = \frac{\text{TeamScore}_k - \bar{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
+\text{Rating}_k = \frac{\text{TeamScore}_k - \overline{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
 $$
 
 This rating captures how productive each team's playoff rotation is expected to be, relative to the league average, based on a composite of advanced player statistics and projected playing time.
 
-### Estimated Team Ratings by Conference
+### Projected Team Ratings by Conference
 
 | Western Conf. | Rating | Eastern Conf. | Rating |
 |:-------------:|:------:|:-------------:|:------:|
@@ -59,15 +59,14 @@ This rating captures how productive each team's playoff rotation is expected to 
 | DEN           |  1.24  | BOS           |  1.22  |
 | LAC           |  0.83  | NYK           |  0.87  |
 | GSW           |  0.75  | MIL           |  0.55  |
-| MIN           |  0.62  | HOU           |  0.38  |
-| LAL           |  0.61  | IND           |  0.29  |
-| MEM           |  0.61  | DET           |  0.08  |
-| SAC           |  0.15  | CHI           | -0.04  |
-| DAL           | -0.36  | ORL           | -0.05  |
-| PHO           | -0.51  | ATL           | -0.19  |
-| POR           | -0.52  | MIA           | -0.19  |
-| SAS           | -0.78  | TOR           | -0.19  |
-| UTA           | -0.84  | BRK           | -1.26  |
-| NOP           | -1.80  | PHI           | -1.33  |
-|               |        | CHO           | -1.66  |
-|               |        | WAS           | -2.07  |
+| MIN           |  0.62  | IND           |  0.29  |
+| LAL           |  0.61  | DET           |  0.08  |
+| MEM           |  0.61  | CHI           | -0.04  |
+| HOU           |  0.38  | ORL           | -0.05  |
+| SAC           |  0.15  | ATL           | -0.19  |
+| DAL           | -0.36  | MIA           | -0.19  |
+| PHO           | -0.51  | TOR           | -0.19  |
+| POR           | -0.52  | BRK           | -1.26  |
+| SAS           | -0.78  | PHI           | -1.33  |
+| UTA           | -0.84  | CHO           | -1.66  |
+| NOP           | -1.80  | WAS           | -2.07  |

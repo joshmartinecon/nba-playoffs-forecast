@@ -420,23 +420,22 @@ weighted by the player’s projected playoff minutes (described in the
 previous section). For each team, I calculate a minutes-weighted average
 productivity:</p>
 <p><span class="math display">\[
-\text{TeamScore}_k = \frac{\sum_{k} \text{Productivity}_i \cdot
-\text{Minutes}_i}{\sum_{k} \text{Minutes}_i}
+\text{TeamScore}_k = \frac{\sum \text{Productivity}_i \cdot
+\text{Minutes}_i}{\sum \text{Minutes}_i}
 \]</span></p>
-<p>for all players on team <span class="math inline">\(k\)</span>.
-(Github doesn’t like subset notation.) Finally, these team scores are
+<p>for all players <span class="math inline">\(i\)</span> on team <span class="math inline">\(k\)</span>. Finally, these team scores are
 themselves standardized across the league to produce a relative team
 rating:</p>
 <p><span class="math display">\[
 \text{Rating}_k = \frac{\text{TeamScore}_k -
-\bar{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
+\overline{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
 \]</span></p>
 <p>This rating captures how productive each team’s playoff rotation is
 expected to be, relative to the league average, based on a composite of
 advanced player statistics and projected playing time.</p>
 </div>
-<div id="estimated-team-ratings-by-conference" class="section level3">
-<h3>Estimated Team Ratings by Conference</h3>
+<div id="projected-team-ratings-by-conference" class="section level3">
+<h3>Projected Team Ratings by Conference</h3>
 <table>
 <thead>
 <tr class="header">
@@ -474,72 +473,66 @@ advanced player statistics and projected playing time.</p>
 <tr class="odd">
 <td align="center">MIN</td>
 <td align="center">0.62</td>
-<td align="center">HOU</td>
-<td align="center">0.38</td>
+<td align="center">IND</td>
+<td align="center">0.29</td>
 </tr>
 <tr class="even">
 <td align="center">LAL</td>
 <td align="center">0.61</td>
-<td align="center">IND</td>
-<td align="center">0.29</td>
+<td align="center">DET</td>
+<td align="center">0.08</td>
 </tr>
 <tr class="odd">
 <td align="center">MEM</td>
 <td align="center">0.61</td>
-<td align="center">DET</td>
-<td align="center">0.08</td>
-</tr>
-<tr class="even">
-<td align="center">SAC</td>
-<td align="center">0.15</td>
 <td align="center">CHI</td>
 <td align="center">-0.04</td>
 </tr>
-<tr class="odd">
-<td align="center">DAL</td>
-<td align="center">-0.36</td>
+<tr class="even">
+<td align="center">HOU</td>
+<td align="center">0.38</td>
 <td align="center">ORL</td>
 <td align="center">-0.05</td>
 </tr>
-<tr class="even">
-<td align="center">PHO</td>
-<td align="center">-0.51</td>
+<tr class="odd">
+<td align="center">SAC</td>
+<td align="center">0.15</td>
 <td align="center">ATL</td>
 <td align="center">-0.19</td>
 </tr>
-<tr class="odd">
-<td align="center">POR</td>
-<td align="center">-0.52</td>
+<tr class="even">
+<td align="center">DAL</td>
+<td align="center">-0.36</td>
 <td align="center">MIA</td>
 <td align="center">-0.19</td>
 </tr>
-<tr class="even">
-<td align="center">SAS</td>
-<td align="center">-0.78</td>
+<tr class="odd">
+<td align="center">PHO</td>
+<td align="center">-0.51</td>
 <td align="center">TOR</td>
 <td align="center">-0.19</td>
 </tr>
-<tr class="odd">
-<td align="center">UTA</td>
-<td align="center">-0.84</td>
+<tr class="even">
+<td align="center">POR</td>
+<td align="center">-0.52</td>
 <td align="center">BRK</td>
 <td align="center">-1.26</td>
 </tr>
-<tr class="even">
-<td align="center">NOP</td>
-<td align="center">-1.80</td>
+<tr class="odd">
+<td align="center">SAS</td>
+<td align="center">-0.78</td>
 <td align="center">PHI</td>
 <td align="center">-1.33</td>
 </tr>
-<tr class="odd">
-<td align="center"></td>
-<td align="center"></td>
+<tr class="even">
+<td align="center">UTA</td>
+<td align="center">-0.84</td>
 <td align="center">CHO</td>
 <td align="center">-1.66</td>
 </tr>
-<tr class="even">
-<td align="center"></td>
-<td align="center"></td>
+<tr class="odd">
+<td align="center">NOP</td>
+<td align="center">-1.80</td>
 <td align="center">WAS</td>
 <td align="center">-2.07</td>
 </tr>
