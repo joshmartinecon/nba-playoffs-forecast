@@ -20,7 +20,7 @@ $$
 where $\alpha$ controls the steepness and $\text{MedianMPG}$ is the median minutes per game among the top 10 players. These transformed values are then scaled so that their sum equals 240 minutes---the total minutes available per team per game:
 
 $$
-\text{Minutes}_i = w_i \cdot \frac{240}{\sum w_i}
+\text{Minutes}_i = w_i \cdot \frac{240}{\sum_{i \in k} w_i}
 $$
 
 Finally, any player whose minutes exceed the 48-minute regulation limit is capped at 48, and the excess is proportionally redistributed to the remaining players. This iterative process continues until the distribution sums to exactly 240 minutes and no player exceeds the maximum.
@@ -40,13 +40,13 @@ where $x_{ij}$ is player $i$'s value for statistic $j$, $\bar{x}_j$ is the leagu
 Next, I compute an average productivity score for each player by taking the mean of the three standardized metrics. This average is then weighted by the player’s projected playoff minutes (described in the previous section). For each team, I calculate a minutes-weighted average productivity:
 
 $$
-\text{TeamScore}_k = \frac{\sum \text{Productivity}_i \cdot \text{Minutes}_i}{\sum \text{Minutes}_i}
+\text{TeamScore}_k = \frac{\sum_{i \in k} \text{Productivity}_i \cdot \text{Minutes}_i}{\sum_{i \in k} \text{Minutes}_i}
 $$
 
-for all players $i$ on team $k$. Finally, these team scores are themselves standardized across the league to produce a relative team rating:
+Finally, these team scores are themselves standardized across the league to produce a relative team rating:
 
 $$
-\text{Rating}_k = \frac{\text{TeamScore}_k - \overline{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
+\text{Rating}_k = \frac{\text{TeamScore}_k - \bar{\text{TeamScore}}}{\sigma_{\text{TeamScore}}}
 $$
 
 This rating captures how productive each team's playoff rotation is expected to be, relative to the league average, based on a composite of advanced player statistics and projected playing time.
